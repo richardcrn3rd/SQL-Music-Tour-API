@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 const {
   Model
-} = require('sequelize');
+} = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class StageEvent extends Model {
     /**
@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  }
+  };
   StageEvent.init({
     stage_events_id: {
       type: DataTypes.INTEGER,
@@ -20,18 +20,18 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     stage_id: {
-      type: DataTypes.SMALLINT,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     event_id: {
-      type: DataTypes.SMALLINT,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   }, {
     sequelize,
     modelName: 'StageEvent',
     tableName: 'stage_events',
-    timeStamps: false
-  });
-  return StageEvent;
-};
+    timestamps: false,
+  })
+  return StageEvent
+}
